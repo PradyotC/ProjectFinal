@@ -1,5 +1,5 @@
 let express  = require('express');
-let reg = require('../db/user.register.schema');
+let reg = require('../../db/user/user.register.schema');
 let router = express.Router();
 let bcrypt = require('bcryptjs');
 router.post('/register', async(req,res) => {

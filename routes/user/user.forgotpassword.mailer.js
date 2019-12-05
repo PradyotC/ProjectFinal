@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
 const crypto = require('crypto');
-let users = require('../db/user.register.schema');
+let users = require('../../db/user/user.register.schema');
 let nodemailer = require('nodemailer');
 router.post('/forgotpassword', async (req, res) => {
     try {
@@ -16,8 +16,8 @@ router.post('/forgotpassword', async (req, res) => {
             port: 465,
             secure: true,
             auth: {
-                user: 'user.email',
-                pass: 'user.password'
+                user: 'pradyot.o.c@gmail.com',
+                pass: 'PraKPC@331'
             }
         });
 

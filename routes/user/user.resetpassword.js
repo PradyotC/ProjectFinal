@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-let users = require('../db/user.register.schema');
+let users = require('../../db/user/user.register.schema');
 let bycrypt = require('bcryptjs');
 let joi = require('@hapi/joi');
 router.post('/resetpassword/:id', async(req,res) => {
@@ -18,6 +18,8 @@ router.post('/resetpassword/:id', async(req,res) => {
         if(comparePassword) { return res.status(403).send({message:'Entered old password'})}
         let salt = await bycrypt.genSalt(10);
         user.UserLogin.userPassword = await bycrypt.hash(req.body.UserLogin.userPassword,salt);
+        user.resetPasswordToken = undefined,
+        user.resetPasswordExpires = undefined;
         let data = await user.save();
         res.send({message:'Password updated',data: data});
     }

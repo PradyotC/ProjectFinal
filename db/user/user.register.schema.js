@@ -6,8 +6,8 @@ let userschema = new mongoose.Schema({
     lastName:{type:String,required:true,minLength:5,maxLength:250},
     newsLetterCheck:{type:Boolean},
     UserLogin:{
-        userEmail:{type:String,required:true,unique:true},
-        userPassword:{type:String,required:true}
+        userEmail: {type:String,required:true,unique:true},
+        userPassword: {type:String,required:true}
     },
     termsAcceptCheck:{type:Boolean,required:true},
     resetPasswordToken:{type:String},

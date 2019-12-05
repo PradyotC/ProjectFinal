@@ -2,7 +2,7 @@ let express = require('express');
 let router = express.Router();
 let joi = require('@hapi/joi');
 let bcrypt = require('bcryptjs');
-let userlogin = require('../db/user.register.schema');
+let userlogin = require('../../db/user/user.register.schema');
 router.post('/auth' , async(req,res) => {
     try
     {
